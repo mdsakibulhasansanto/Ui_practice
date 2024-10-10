@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'image_column_row_appbar.dart';
+import 'module_six/image_column_row_appbar.dart';
 
 void main (){
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return const MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: ImageColumnRow()
     );
