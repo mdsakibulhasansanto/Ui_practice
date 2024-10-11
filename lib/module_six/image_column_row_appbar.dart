@@ -52,35 +52,120 @@ class ImageColumnRow extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10,width: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20,width: 20,),
-                Container(
-                  height: 70,
-                  width: 100,
+
+           Padding( padding: const EdgeInsets.only(left: 5,right: 5),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.start,
+             children: [
+               const SizedBox(height: 20,width: 20,),
+               Container(
+                 height: 60,
+                 width: 70,
+                 margin: const EdgeInsets.only(top: 10,bottom: 10),
+                 decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(20),
+                 ),
+                 child: ClipRRect(
+                   borderRadius: BorderRadius.circular(10), // এটি সঠিক
+                   child: Image.asset('images/a.jpeg', fit: BoxFit.cover),
+                 ),
+               ),
+               const SizedBox(height: 20,width: 20,),
+               Container(
+                 height: 60,
+                 width: 70,
+                 margin: const EdgeInsets.only(top: 10,bottom: 10),
+                 decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(20),
+                 ),
+                 child: ClipRRect(
+                   borderRadius: BorderRadius.circular(10), // এটি সঠিক
+                   child: Image.asset('images/b.jpeg', fit: BoxFit.cover),
+                 ),
+               ),
+               const SizedBox(height: 20,width: 20,),
+
+               Container(
+                 height: 60,
+                 width: 70,
+                 margin: const EdgeInsets.only(top: 10,bottom: 10),
+                 padding: const EdgeInsets.all(0),
+                 decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(20),
+                 ),
+                 child: ClipRRect(
+                   borderRadius: BorderRadius.circular(10), // এটি সঠিক
+                   child: Image.asset('images/c.jpeg', fit: BoxFit.cover),
+                 ),
+               ),
+             ],
+           ),
+             ),
+            const SizedBox(height: 20,width: 20,),
+         const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(width: 20,height: 20),
+            Text('All books listed ',style: TextStyle(
+              color: Colors.black,
+              fontStyle: FontStyle.italic,
+              fontSize: 15,
+              fontWeight: FontWeight.bold
+            ),)
+          ],),
+           const SizedBox(width: 20,height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(height: 20,width: 20,),
+                 Container(
+                  height: 60,
+                  width: 70,
+                  margin: const EdgeInsets.only(top: 0,bottom: 10),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10), // এটি সঠিক
-                    child: Image.asset('images/a.jpeg', fit: BoxFit.cover),
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('images/book_a.jpeg',fit: BoxFit.cover,),
                   ),
                 ),
-                const SizedBox(height: 20,width: 20,),
-                Container(
-                  height: 70,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+              const SizedBox(height: 20,width: 20,),
+              Container(
+                height: 60,
+                width: 70,
+                margin: const EdgeInsets.only(top: 0,bottom: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset('images/book_a.jpeg',fit: BoxFit.cover,),
+                ),
+              ),
+
+              const SizedBox(height: 20,width: 20,),
+              Container(
+                height: 60,
+                width: 70,
+                margin: const EdgeInsets.only(top: 0, bottom: 10),
+                padding: const EdgeInsets.only(left: 10, right: 10,top: 10,bottom: 10),
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black12)
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    'images/book_c.png',
+                    fit: BoxFit.fill,
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10), // এটি সঠিক
-                    child: Image.asset('images/b.jpeg', fit: BoxFit.cover),
-                  ),
-                )
-              ],
-            )
+                ),
+              )
+
+            ],
+          ),
 
           ],
         ),
