@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_ui_practice/module_six/image_column_row_appbar.dart';
+import 'package:flutter_ui_practice/module_six/image_column_row_appbar.dart';
 class ButtonAlertDialog extends StatelessWidget {
   const ButtonAlertDialog({super.key});
 
@@ -10,7 +11,7 @@ class ButtonAlertDialog extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(Icons.menu),
         toolbarOpacity: 0.8,
-        elevation: 0.5,
+        elevation: 0.6,
         title: Title(
             color: Colors.black,
             child: const Text(
@@ -20,7 +21,7 @@ class ButtonAlertDialog extends StatelessWidget {
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
             )),
-        backgroundColor: Colors.black12,
+        backgroundColor: const Color.fromRGBO(60, 179, 113, 1.0),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
@@ -42,6 +43,43 @@ class ButtonAlertDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
            const SizedBox(height: 20,),
+             GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ImageColumnRow()),
+                );
+              },
+              child: Container(
+                width: 200,
+                height: 100,
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(20),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(60, 179, 113, 1.0),
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: const Text(
+                  'Container',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              )
+
+             ),
+            const SizedBox(height: 20,),
             // ElevatedButton
             ElevatedButton(
               onPressed: () {
@@ -49,7 +87,7 @@ class ButtonAlertDialog extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 elevation: 8,
-                padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 15), // padding
+                padding:const EdgeInsets.symmetric(horizontal: 10, vertical: 10), // padding
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),side: const BorderSide(
                   color: Colors.grey,width: 2
@@ -73,7 +111,7 @@ class ButtonAlertDialog extends StatelessWidget {
                        child: Image.asset('images/book_c.png')
                    ),
                  ),
-                 const SizedBox(width: 10),
+                 const SizedBox(width: 20),
                  const Text('Books house',
                    style: TextStyle(
                        color: Colors.black,
@@ -100,7 +138,7 @@ class ButtonAlertDialog extends StatelessWidget {
               alignment: Alignment.center,
               child:   ElevatedButton(
                 onPressed: () {
-                  print('Custom Icon Button Pressed');
+                 // print('Custom Icon Button Pressed');
                 },
                 style: ElevatedButton.styleFrom(
                   elevation: 8,
@@ -211,10 +249,36 @@ class ButtonAlertDialog extends StatelessWidget {
               ),
             ),
 
-
           ],
         ),
       ),
+
+      floatingActionButton: Container(
+        height: 50,
+        width: 50,
+        margin: const EdgeInsets.only(bottom: 20,right: 10),
+        padding: const EdgeInsets.all(0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(90)
+        ),
+        child: FloatingActionButton(
+          onPressed: () {
+            // Navigator.push দিয়ে নতুন স্ক্রিনে যাওয়ার জন্য
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ImageColumnRow()),
+            );
+          },
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.black,
+          elevation: 10.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(90)
+          ),
+          child: const Icon(Icons.add),
+        ),
+      ),
+
     );
   }
 }
