@@ -1,10 +1,14 @@
-
+// Drawer , BottomNavigationBar, ScrollBar, ListView
 import 'package:flutter/material.dart';
-
 class AppBarBottomNavigationListViewScrollView extends StatelessWidget{
-  const AppBarBottomNavigationListViewScrollView({super.key});
+   AppBarBottomNavigationListViewScrollView({super.key});
 
-  // Drawer , BottomNavigationBar, ScrollBar, ListView
+  List<String> FriendList =  [
+    'Santo','Sakib','Nurul','Jamal','Joy','Roy'
+        'Santo','Sakib','Nurul','Jamal','Joy','Roy'
+        'Santo','Sakib','Nurul','Jamal','Joy','Roy'
+  ];
+
   @override
   Widget build(BuildContext context) {
    
@@ -55,6 +59,23 @@ class AppBarBottomNavigationListViewScrollView extends StatelessWidget{
             BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
           ]
       ),
+      body: Scrollbar(
+        thickness: 10,
+
+        radius: const Radius.circular(10),
+        interactive: true,
+        child: ListView.builder(
+          itemCount: FriendList.length,
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(FriendList[index]),
+            );
+          },
+        ),
+      )
+
     );
   }
   

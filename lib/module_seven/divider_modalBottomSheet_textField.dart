@@ -2,15 +2,14 @@
 import 'package:flutter/material.dart';
 
 class ModalBottomSheet extends StatelessWidget {
-  const ModalBottomSheet({super.key});
-
+   ModalBottomSheet({super.key});
   @override
   Widget build(BuildContext context) {
 
     return Scaffold (
       appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text('BottomSheet'),
+        leading: const Icon(Icons.menu),
+        title: const Text('BottomSheet'),
       ),
       body: Center(
         child: Column(
